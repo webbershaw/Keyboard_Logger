@@ -1,1 +1,4 @@
 *.yaml
+.idea/
+keylog.txt
+client/keylog.txt

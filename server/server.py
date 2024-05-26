@@ -6,10 +6,12 @@ from sqlalchemy import create_engine, Column, String, Text, DateTime, Integer
 from sqlalchemy.orm import sessionmaker, declarative_base
 import datetime
 import uvicorn
-
+import os
+current_directory = os.path.dirname(os.path.abspath(__file__))
+config_path = os.path.join(current_directory, 'server-config.yaml')
 # 读取配置文件
 def read_config():
-    with open("server-config.yaml", "r") as file:
+    with open(config_path, "r") as file:
         return yaml.safe_load(file)
 
 config = read_config()
