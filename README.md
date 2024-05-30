@@ -18,6 +18,7 @@ The client component is responsible for capturing keystrokes and is located in t
 - **Main Script:** `main.py` is the primary script for capturing keystrokes.
 - **Supported Platforms:** The client is compatible with macOS, Linux, and Windows.
 - **Virtual Environments:** Provided under `winkbvenv` and `kbvenv` directories for Windows and macOS respectively to facilitate easy setup.
+- **Keyboard Log:** The keyboard log file is saved as `keyboard.log` in the `/client` directory.
 
 #### Setup and Configuration
 Before running the client, especially if real-time data syncing with the server is required, follow these initial setup steps:
