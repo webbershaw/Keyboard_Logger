@@ -46,3 +46,5 @@ uvloop==0.19.0
 watchfiles==0.21.0
 websockets==12.0
 pywin32==306 #Windows Only
+requests==2.26.0
+

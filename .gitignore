@@ -2,3 +2,4 @@
 .idea/
 keylog.txt
 client/keylog.txt
+*.json
