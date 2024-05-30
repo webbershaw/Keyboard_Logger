@@ -1,18 +1,7 @@
 @echo off
-
+cd /d %~dp0
 set CURRENT_DIR=%cd%
-
-
-cd ..
-
-
 call winkbvenv\Scripts\activate
-
-
-cd %CURRENT_DIR%
-
-
-python main.py
-
-
+cd /d %CURRENT_DIR%
+python %~dp0main.py
 pause

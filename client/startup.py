@@ -2,7 +2,10 @@ import os
 import sys
 import ctypes
 import shutil
-import win32com.client
+
+import system_detect
+if system_detect.detect_os() == 'Windows':
+    import win32com.client
 from datetime import datetime, timedelta
 
 
